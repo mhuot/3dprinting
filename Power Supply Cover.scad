@@ -12,10 +12,10 @@ union() {
     foot_size = r_depth/4;
     translate([0,0,r_depth]) front(thick, f_width, f_height, f_depth); 
     rear(thick*2,r_width, r_height, f_depth);
-//    translate([0,r_height,0]) foot(foot_size,thick);
-//    translate([r_width-foot_size-1, r_height-1, -1]) rotate(180,0,0) foot(foot_size,thick);
-//    translate([0,r_height,(r_depth+f_depth)-foot_size]) foot(foot_size,thick);
-//    translate([r_width-foot_size,r_height,(r_depth+f_depth)-foot_size]) foot(foot_size, thick);
+    translate([0,r_height,0]) foot(foot_size,thick); // left rear foot
+    translate([r_width, r_height-(thick*.5), 0]) rotate([-90,-90,90]) { foot(foot_size,thick); }
+    translate([0,r_height-(thick*.5),(r_depth+f_depth)]) rotate ([90,90,90]) {foot(foot_size,thick);}
+    translate([r_width,r_height-(thick*.5),(r_depth+f_depth)]) rotate([0,180,0]) { foot(foot_size, thick); }
 }
 
 module foot (foot_size,thick) {
