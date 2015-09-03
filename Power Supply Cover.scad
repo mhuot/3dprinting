@@ -12,16 +12,17 @@ union() {
     foot_size = r_depth/4;
     translate([0,0,r_depth]) front(thick, f_width, f_height, f_depth); 
     rear(thick*2,r_width, r_height, f_depth);
-    translate([0,r_height,0]) foot(foot_size,thick); // left rear foot
-    translate([r_width, r_height-(thick*.5), 0]) rotate([-90,-90,90]) { foot(foot_size,thick); }
-    translate([0,r_height-(thick*.5),(r_depth+f_depth)]) rotate ([90,90,90]) {foot(foot_size,thick);}
-    translate([r_width,r_height-(thick*.5),(r_depth+f_depth)]) rotate([0,180,0]) { foot(foot_size, thick); }
+    rotate ([0,-90,0]) {translate([0,r_height,0-foot_size]) foot(foot_size,thick);} // left rear foot
+    translate([r_width, r_height-(thick*.5), 0+foot_size]) rotate([0,180,0]) { foot(foot_size,thick); }
+    translate([0,r_height-(thick*.5),(r_depth+f_depth)-foot_size]) rotate ([0,0,0]) {foot(foot_size,thick);}
+    translate([r_width-foot_size,r_height-(thick*.5),(r_depth+f_depth)]) rotate([0,90,0]) { foot(foot_size, thick); }
 }
 
 module foot (foot_size,thick) {
     difference() {
         cube([foot_size,foot_size,foot_size]);
-        translate([thick, 0,thick]) cube([foot_size,foot_size,foot_size]);
+        rotate ([0, 45, 0]) {cube([foot_size*2,foot_size*2,foot_size*2]);}
+//        translate([thick, 0,thick]) cube([foot_size,foot_size,foot_size]);
     }
 }
 module front (thickness, width, height, depth) {
