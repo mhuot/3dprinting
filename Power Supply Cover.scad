@@ -1,7 +1,7 @@
 union() {
     // 173 x 94 x 43 mm
-    x_dim = 94;
-    y_dim = 43;
+    x_dim = 112;
+    y_dim = 50;
     thick = 2;
     f_depth = 30; // z
     f_height = y_dim + thick; // y
@@ -43,7 +43,7 @@ module rear (thickness, width, height, depth) {
         }
         right_cord(thickness, width, height, depth, 10);
         left_cord(thickness, width, height, depth, 10);
-        switch(thickness, 20, 10);
+        switch(thickness, 22, 17);
     }
 }
 
