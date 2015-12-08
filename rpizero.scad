@@ -23,8 +23,8 @@ difference() {
         translate([30,usbCenter-(usbWidth/2),1]) cube([2,usbWidth,3]);
         translate([30,hdmiCenter-(hdmiWidth/2),1]) cube([2,hdmiWidth,3]);    
     }
-    translate([1,65,0]) {
-        translate([sdCenter-(sdWidth/2),0,1]) cube([sdWidth,2,3]); 
+    translate([1,0,0]) {
+        translate([(32-sdCenter)-(sdWidth/2),0,1]) cube([sdWidth,2,3]); 
     }
 }
 
@@ -40,7 +40,7 @@ module rpiOutline(thick) {
 }
 
 module peg () {
-        cylinder(2,1.2,1.375);
+        cylinder(2,1.2,1.2);
 }
 module corner (thick) {
     cylinder(thick,cornerRad,cornerRad);
