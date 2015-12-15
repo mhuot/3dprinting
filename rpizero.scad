@@ -5,7 +5,7 @@ powerCenter = 54;
 usbCenter = 41.4;
 hdmiCenter = 12.4;
 hdmiWidth = 14;
-sdWidth = 13.85;
+sdWidth = 14;
 sdCenter = 16.9;
 difference() {
     union() {

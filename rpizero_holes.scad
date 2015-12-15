@@ -3,9 +3,10 @@ baseThickness = 1;
 usbWidth = 8.8;
 powerCenter = 54;
 usbCenter = 41.4;
+// Printed with green PLA at 210C 1.03 x 1.025 x 1.025 scaling
 hdmiCenter = 12.4;
 hdmiWidth = 14;
-sdWidth = 13.85;
+sdWidth = 12;
 sdCenter = 16.9;
 difference() {
     difference() {
@@ -22,7 +23,7 @@ difference() {
         translate([30,hdmiCenter-(hdmiWidth/2),1]) cube([2,hdmiWidth,3]);    
     }
     translate([1,0,0]) {
-        translate([(32-sdCenter)-(sdWidth/2),0,1]) cube([sdWidth,2,3]); 
+        translate([7,0,1]) cube([sdWidth,2,3]); 
     }
 }
 
