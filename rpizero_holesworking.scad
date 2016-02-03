@@ -6,8 +6,8 @@ usbCenter = 42;
 // Printed with green PLA at 210C 1.03 x 1.025 x 1.025 scaling
 hdmiCenter = 13;
 hdmiWidth = 13;
-sdWidth = 13;
-sdCenter = 17;
+sdWidth = 13.5;
+sdCenter = 16.75;
 slotHeight = 3;
 union() {
     difference() {
@@ -28,8 +28,8 @@ union() {
     }
     difference() {
         difference() {
-            cube([34,69,4]);
-            translate([1,1,1.5]) rpiOutline(4);
+            cube([34,69,6]);
+            translate([1,1,1.5]) rpiOutline(8);
         }
         translate([5.5,4.5,0]) screwhole(); // Lower left
         translate([28.5,4.5,0]) screwhole(); // Lower right
@@ -59,7 +59,7 @@ module rpiOutline(thick) {
 }
 
 module screwhole () {
-        cylinder(4,1.375,1.375);
+        cylinder(6,1.375,1.375);
 }
 module corner (thick) {
     cylinder(thick,cornerRad,cornerRad);
