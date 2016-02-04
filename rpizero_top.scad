@@ -6,10 +6,11 @@ usbCenter = 42;
 // Printed with green PLA at 210C 1.03 x 1.025 x 1.025 scaling
 hdmiCenter = 13;
 hdmiWidth = 13;
-sdWidth = 13;
-sdCenter = 17;
+sdWidth = 13.5;
+sdCenter = 16.75;
 slotHeight = 3;
-height = 8;
+height = 3;
+
 union() {
     difference() {
         translate([5.5,4.5,0]) cylinder(2,2,2); // Lower left
@@ -28,22 +29,23 @@ union() {
         translate([5.5,63.5,0]) screwhole(); // Upper left
     }
     difference() {
-        difference() {
-            cube([34,69,height]);
-            translate([1,1,1.5]) rpiOutline(height);
+        union() {
+            cube([34,69,2]);
+            translate([1,1,1.5]) rpiOutline(3);
+        }
+        translate([0,1,0]) {
+            translate([0,(powerCenter-(usbWidth/2)),slotHeight]) cube([8,usbWidth,height]);
+            translate([0,(usbCenter-(usbWidth/2)),slotHeight]) cube([8,usbWidth,height]);
+            translate([0,hdmiCenter-(hdmiWidth/2),slotHeight]) cube([10,hdmiWidth,height]);    
         }
         translate([5.5,4.5,0]) screwhole(); // Lower left
         translate([28.5,4.5,0]) screwhole(); // Lower right
         translate([28.5,63.5,0]) screwhole(); // Upper right
         translate([5.5,63.5,0]) screwhole(); // Upper left
-        translate([0,1,0]) {
-            translate([30,powerCenter-(usbWidth/2),slotHeight]) cube([4,usbWidth,height]);
-            translate([30,usbCenter-(usbWidth/2),slotHeight]) cube([4,usbWidth,height]);
-            translate([30,hdmiCenter-(hdmiWidth/2),slotHeight]) cube([4,hdmiWidth,height]);    
-        }
-        translate([1,0,0]) {
-            translate([7,0,slotHeight]) cube([sdWidth,2,height]); // SD Slot
-        }
+//        translate([1,0,0]) {
+//            translate([(34-8)-sdWidth,0,slotHeight]) cube([sdWidth,2,height]); // SD Slot
+//        }
+
     }
     
 }
@@ -60,7 +62,7 @@ module rpiOutline(thick) {
 }
 
 module screwhole () {
-        cylinder(4,1.375,1.375);
+        cylinder(6,1.375,1.375);
 }
 module corner (thick) {
     cylinder(thick,cornerRad,cornerRad);
