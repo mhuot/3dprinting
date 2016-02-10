@@ -9,6 +9,7 @@ hdmiWidth = 13;
 sdWidth = 13;
 sdCenter = 17;
 slotHeight = 3;
+height = 8;
 union() {
     difference() {
         translate([5.5,4.5,0]) cylinder(2,2,2); // Lower left
@@ -28,20 +29,20 @@ union() {
     }
     difference() {
         difference() {
-            cube([34,69,4]);
-            translate([1,1,1.5]) rpiOutline(4);
+            cube([34,69,height]);
+            translate([1,1,1.5]) rpiOutline(height);
         }
         translate([5.5,4.5,0]) screwhole(); // Lower left
         translate([28.5,4.5,0]) screwhole(); // Lower right
         translate([28.5,63.5,0]) screwhole(); // Upper right
         translate([5.5,63.5,0]) screwhole(); // Upper left
         translate([0,1,0]) {
-            translate([30,powerCenter-(usbWidth/2),slotHeight]) cube([4,usbWidth,3]);
-            translate([30,usbCenter-(usbWidth/2),slotHeight]) cube([4,usbWidth,3]);
-            translate([30,hdmiCenter-(hdmiWidth/2),slotHeight]) cube([4,hdmiWidth,3]);    
+            translate([30,powerCenter-(usbWidth/2),slotHeight]) cube([4,usbWidth,height]);
+            translate([30,usbCenter-(usbWidth/2),slotHeight]) cube([4,usbWidth,height]);
+            translate([30,hdmiCenter-(hdmiWidth/2),slotHeight]) cube([4,hdmiWidth,height]);    
         }
         translate([1,0,0]) {
-            translate([7,0,slotHeight]) cube([sdWidth,2,3]); // SD Slot
+            translate([7,0,slotHeight]) cube([sdWidth,2,height]); // SD Slot
         }
     }
     
