@@ -13,6 +13,7 @@ height = 3;
 
 union() {
     difference() {
+<<<<<<< HEAD
         translate([5.5,4.5,0]) cylinder(6,2,2); // Lower left
         translate([5.5,4.5,0]) screwhole();
     }
@@ -26,6 +27,21 @@ union() {
     }
     difference() {
         translate([5.5,63.5,0]) cylinder(6,2,2); // Upper left    
+=======
+        translate([5.5,4.5,0]) cylinder(2,2,2); // Lower left
+        translate([5.5,4.5,0]) screwhole();
+    }
+    difference() {
+        translate([28.5,4.5,0]) cylinder(2,2,2); // Lower right
+        translate([28.5,4.5,0]) screwhole(); // Lower right
+    }
+    difference() {
+        translate([28.5,63.5,0]) cylinder(2,2,2); // Upper right
+        translate([28.5,63.5,0]) screwhole(); // Upper right
+    }
+    difference() {
+        translate([5.5,63.5,0]) cylinder(2,2,2); // Upper left    
+>>>>>>> 397eb63a7fcf9872e8e83480c120886fda1d83f6
         translate([5.5,63.5,0]) screwhole(); // Upper left
     }
     difference() {
@@ -36,7 +52,11 @@ union() {
         translate([0,1,0]) {
             translate([0,(powerCenter-(usbWidth/2)),slotHeight]) cube([8,usbWidth,height]);
             translate([0,(usbCenter-(usbWidth/2)),slotHeight]) cube([8,usbWidth,height]);
+<<<<<<< HEAD
             translate([0,hdmiCenter-(hdmiWidth/2),slotHeight-0.5]) cube([10,hdmiWidth,height]);    
+=======
+            translate([0,hdmiCenter-(hdmiWidth/2),slotHeight]) cube([10,hdmiWidth,height]);    
+>>>>>>> 397eb63a7fcf9872e8e83480c120886fda1d83f6
         }
         translate([5.5,4.5,0]) screwhole(); // Lower left
         translate([28.5,4.5,0]) screwhole(); // Lower right
@@ -45,7 +65,10 @@ union() {
 //        translate([1,0,0]) {
 //            translate([(34-8)-sdWidth,0,slotHeight]) cube([sdWidth,2,height]); // SD Slot
 //        }
+<<<<<<< HEAD
         translate([8,8,2]) cube([18,53,3]);
+=======
+>>>>>>> 397eb63a7fcf9872e8e83480c120886fda1d83f6
 
     }
     
@@ -63,7 +86,11 @@ module rpiOutline(thick) {
 }
 
 module screwhole () {
+<<<<<<< HEAD
         cylinder(8,1.375,1.375);
+=======
+        cylinder(6,1.375,1.375);
+>>>>>>> 397eb63a7fcf9872e8e83480c120886fda1d83f6
 }
 module corner (thick) {
     cylinder(thick,cornerRad,cornerRad);
