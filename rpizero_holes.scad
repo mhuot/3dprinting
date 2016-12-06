@@ -1,4 +1,4 @@
-cornerRad = 3.5;
+    cornerRad = 3.5;
 baseThickness = 1;
 usbWidth = 9;
 powerCenter = 55;
