@@ -34,6 +34,5 @@ module slot() {
     difference() {
         cube([slotsize,slotsize,radius+height+offset]);
         translate([offset-0.1,offset-0.1,offset+zpad]) hole();
-//        translate([slotside/2,-(((slotside*sqrt(2))-slotside)/2),offset+zpad+radius]) rotate([0,0,45])  cube([slotsize,slotsize,height*.8]);
     }
 }    
